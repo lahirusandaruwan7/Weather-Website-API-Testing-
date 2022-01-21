@@ -20,6 +20,7 @@ const getWeather = (lat, log) => {
       })
       .catch(function (error) {
         // handle error
+       
         if (error.response === undefined) {
           reject({error:'Connection Problem'});
         } else {

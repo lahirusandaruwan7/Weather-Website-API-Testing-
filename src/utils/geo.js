@@ -11,6 +11,7 @@ console.log(url)
     axios
       .get(url)
       .then(function (response) {
+      
         // handle success
        resolve({
        // console.log(response.data[0].name + ' is in ' + response.data[0].lat+' ' + response.data.lon)
@@ -21,11 +22,8 @@ console.log(url)
       })
       .catch(function (error) {
         // handle error
-        if (error.response === undefined) {
-          reject("Connection problem");
-        } else {
-          reject(error.response.data.message);
-        }
+        reject({error:"Unable to find location"});
+       
       })
       
   });
